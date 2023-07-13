@@ -50,6 +50,7 @@ function Login() {
             id="lname"
             name="password"
             defaultValue="Doe"
+            placeholder='......'
           />
           <br />
           <br />

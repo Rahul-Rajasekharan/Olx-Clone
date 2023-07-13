@@ -19,6 +19,13 @@ function Header() {
       navigate('/')
     })
   }
+   const handeSell = () =>{
+    if(user){
+      navigate('/create')
+    }else{
+      navigate('/login')
+    } 
+   }
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -37,7 +44,7 @@ function Header() {
               placeholder="Find car,mobile phone and more..."
             />
           </div>
-          <div className="searchAction">
+          <div className="searchAction" type="submit">
             <Search color="#ffffff"></Search>
           </div>
         </div>
@@ -50,14 +57,12 @@ function Header() {
           <hr />
         </div>
         {user && <span className='login' onClick={handleLogout}>Logout</span>}
-        <div className="sellMenu">
-          <Link to='/create'>
+        <div className="sellMenu" onClick={handeSell}>
             <SellButton></SellButton>
             <div className="sellMenuContent">
               <SellButtonPlus></SellButtonPlus>
               <span>SELL</span>
             </div>
-          </Link>
         </div>
       </div>
     </div>
